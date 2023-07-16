@@ -4,10 +4,9 @@ fetch(FULL_URL)
 .then(res => res.json())
 .then(rep => {
     let html = rep.map(row => {
-      return "<tr>" + row.map(v => {
-        return `<td>${v}</td>`
-      }).join("") + "</tr>"
+      return `<h3>The dog ran ${row[0]} and ${row[1]}</h3>`
     }).join("");
 
-    document.getElementById("table").innerHTML = html;
+
+    document.getElementById("app").innerHTML = html;
 })
