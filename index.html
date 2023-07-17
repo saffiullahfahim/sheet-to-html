@@ -26,15 +26,15 @@
           callBack: showData,
         });
 
-        function showData(content) {
+        function showData(sheetData) {
           let heading = document.getElementById("heading");
           let cellA2 = document.getElementById("cellA2");
           let cellB2 = document.getElementById("cellB2");
           let content = document.getElementById("content");
 
-          heading.innerText = content.getData("A1");
-          cellA2.innerText = content.getData("A2");
-          cellB2.innerText = content.getData("B2");
+          heading.innerText = sheetData.getData("A1");
+          cellA2.innerText = sheetData.getData("A2");
+          cellB2.innerText = sheetData.getData("B2");
         }
       }
 
