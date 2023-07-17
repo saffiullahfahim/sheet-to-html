@@ -4,14 +4,41 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
     <title>Sheet To Tables</title>
   </head>
   <body>
-    <div id="app">
-        loading...
-    </div>
+    <h1 id="heading">Hello From Sheet1</h1>
 
-    <script src="main.js"></script>
+    <p>
+      The dog run <span id="cellA2">{A2}</span> and
+      <span id="cellB2">{B2}</span>
+    </p>
+
+    <p id="content">{content}</p>
+
+    <script src="https://saffiullahfahim.github.io/sheet-to-html/sheetToHtml.js"></script>
+
+    <script>
+      function load() {
+        new SheetToHtml({
+          scriptUrl:
+            "https://script.google.com/macros/s/AKfycbz3Cn6900c9_d9KK7rXUU4w_CuCd98wt87oCn25gUr7COjTVx1DeZ5gRH84BHEqRxhz/exec",
+          callBack: showData,
+        });
+
+        function showData(content) {
+          let heading = document.getElementById("heading");
+          let cellA2 = document.getElementById("cellA2");
+          let cellB2 = document.getElementById("cellB2");
+          let content = document.getElementById("content");
+
+          heading.innerText = content.getData("A1");
+          cellA2.innerText = content.getData("A2");
+          cellB2.innerText = content.getData("B2");
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", init);
+    </script>
   </body>
 </html>
