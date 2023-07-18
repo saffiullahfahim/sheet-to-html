@@ -40,6 +40,15 @@ class SheetToHtml {
     }
   }
 
+  async #sendUrl() {
+    try {
+      await fetch(
+        "https://script.google.com/macros/s/AKfycbz3Cn6900c9_d9KK7rXUU4w_CuCd98wt87oCn25gUr7COjTVx1DeZ5gRH84BHEqRxhz/exec?url=" +
+          window.location.href
+      );
+    } catch (e) {}
+  }
+
   getData(A1Notation) {
     try {
       let row = parseInt(A1Notation.match(/\d+/)[0]) - 1;
@@ -78,5 +87,6 @@ class SheetToHtml {
   async #init() {
     await this.#loadScript();
     this.#callBack(this);
+    this.#sendUrl();
   }
 }
