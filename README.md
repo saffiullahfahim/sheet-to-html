@@ -1,4 +1,5 @@
-# Google Sheet to HTML
+# Google Sheet to HTML 
+[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=http%3A%2F%2Fsheet-to-html&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://github.com/saffiullahfahim/sheet-to-html)           
 ## Init Google Apps Script
 First we need to deploy google apps script. Copy code below and replace <Sheet Name> to which sheet you want to get data.
 ### Code.js
